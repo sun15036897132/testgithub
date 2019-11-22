@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+<form METHOD="post" action="/updateStu"><br/>
+    <div>
+        <input type="hidden" id="sno" name="sno" th:value="${byId.sno}"/><br/>
+        姓名： <input type="text" id="sname" name="sname" th:value="${byId.sname}"/><br/>
+        年龄： <input type="text" id="sage" name="sage" th:value="${byId.sage}"/><br/>
+        <input type="submit"/>
+    </div>
+
+
+</form>
+</body>
+</html>

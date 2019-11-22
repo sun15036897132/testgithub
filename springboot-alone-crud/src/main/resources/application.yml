@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/students?serverTimezone=UTC
+    username: root
+    password: root
+    schema:
+     # - classpath:person.sql
+    #initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 10
+    maxActive: 20
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+
+  redis:
+    host: localhost
+    #开启驼峰命名匹配 数据库中 u_id = domain 中 uId
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.huidian.mapper: debug
+

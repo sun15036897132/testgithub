@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+    <a href="/add"> 添加</a>
+    <table border="1">
+        <tr>
+            <th>排名</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="stu :${stus}">
+            <td th:text="${stu.sno}"></td>
+            <td th:text="${stu.sname}"></td>
+            <td th:text="${stu.sage}"></td>
+            <td>
+                <a th:href="@{/findById(sno=${stu.sno})}">修改</a>
+                <a th:href="@{/deleteStu(sno=${stu.sno})}">删除</a>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
